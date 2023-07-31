@@ -1,0 +1,249 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+.desktop {
+    background-image: url(../imgs/windows_wallpaper.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+}
+.desktop__icon {
+    margin: 1rem 1rem 1rem 1rem;
+    width: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.desktop__icon p {
+    color: white;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.desktop__icon img {
+    width: 3rem;
+}
+
+.app {
+    background-color: white;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 5;
+    position: absolute;
+    top: 100px;
+    left: 450px;
+}
+
+#app__steam {
+    background-color: #222327;
+    min-width: 42rem;
+    padding: 2.2rem;
+    font-family: Calibri;
+    display: none;
+}
+.steam_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+.steam_header div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.steam_header h2 {
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.steam_header p {
+    align-self: flex-start;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: -2rem;
+    margin-right: -1.5rem;
+    text-decoration: none;
+    color: white;
+}
+.steam_header p:hover {
+    cursor: pointer;
+    color: #afafaf;
+}
+.steam_header img {
+    width: 3rem;
+}
+.steam_container {
+    display: flex;
+    gap: 1.5rem;
+}
+.steam_container form {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #afafaf;
+}
+.steam_container form label {
+    margin-bottom: 5px;
+}
+.steam_container form label:first-child,
+.steam_qrCode p {
+    color: #1a9fff;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+}
+.steam_container input[type="text"],
+.steam_container input[type="password"] {
+    background-color: #393c44;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 0.7rem;
+    color: white;
+    margin-bottom: 15px;
+}
+.steam_container input[type="text"]:hover,
+.steam_container input[type="password"]:hover {
+    background-color: #494d57;
+}
+.steam_container input[type="checkbox"] {
+    visibility: hidden;
+}
+.steam_container label[for="remember"] {
+    margin-top: -1rem;
+    font-size: 1rem;
+    font-weight: normal;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.steam_container label[for="remember"]::before {
+    content: "ss|";
+    background-color: #393c44;
+    color: #393c44;
+    padding: 0.1rem;
+    margin-right: 0.5rem;
+    border-radius: 3px;
+}
+.steam_container label[for="remember"]:hover::before {
+    background-color: #494d57;
+    color: #494d57;
+    cursor: pointer;
+}
+.steam_container:has(input[type="checkbox"]:checked) label[for="remember"]::before {
+    content: "✔";
+    background-color: #393c44;
+    color: white;
+    padding: 0.1rem 0.35rem;
+    margin-right: 0.5rem;
+    border-radius: 3px;
+}
+.steam_container div {
+    text-align: center;
+}
+.steam_container input[type="submit"] {
+    background-image: linear-gradient(90deg, #06bfff, #2b76ff);
+    border: none;
+    border-radius: 3px;
+    padding: 1rem 7rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+.steam_container input[type="submit"]:hover {
+    cursor: pointer;
+    background-image: linear-gradient(90deg, #42cbf9, #2b76ff);
+}
+.steam_container a {
+    display: block;
+    color: #afafaf;
+    text-transform: none;
+}
+.steam_qrCode img {
+    width: 12rem;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 5px;
+}
+
+#app__discord {
+    background-color: #313338;
+    min-width: 62rem;
+    height: 32rem;
+    font-family: Calibri;
+    display: none;
+}
+.discord_container {
+    display: flex;
+    height: 100%;
+}
+.menu {
+    width: 48px;
+    padding: 1rem;
+    background-color: #1e1f22;
+}
+.menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: center;
+    justify-content: center;
+}
+.menu img {
+    width: 3rem;
+    border-radius: 24px;
+    background-color: mediumpurple;
+}
+.menu ul li:first-child {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #afafaf;
+}
+.menu ul li:first-child img {
+    background-color: #5865f2;
+    border-radius: 15px;
+}
+
+.taskbar {
+    background-color: rgb(0 0 127.5 / 0.3);
+    margin: 1rem 0 0 0;
+    padding: 0.2rem 0.2rem 0.2rem 1rem;
+    width: 100vw;
+    height: 3rem;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+}
+.taskbar__icon {
+    width: 1.5rem;
+}
+.taskbar__icon:hover,
+.desktop__icon {
+    cursor: pointer;
+}

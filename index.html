@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Windows</title>
+
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+
+    <body>
+        <div class="desktop">
+            <div class="desktop__icon">
+                <img src="imgs/chrome-logo.png" />
+                <p>Google Chrome</p>
+            </div>
+            <div class="desktop__icon" onmousedown="handleApplication('#app__steam')">
+                <img src="imgs/Steam_icon_logo.png" />
+                <p>Steam</p>
+            </div>
+            <div class="desktop__icon" onmousedown="handleApplication('#app__discord')">
+                <img src="imgs/discord-logo.png" />
+                <p>Discord</p>
+            </div>
+        </div>
+
+        <div class="taskbar">
+            <img src="imgs/windowsStartBtn.png" class="taskbar__icon" />
+        </div>
+
+        <div class="app" id="app__steam">
+            <div class="steam_header">
+                <div>
+                    <img src="imgs/Steam_icon_app.png" />
+                    <h2>Steam</h2>
+                </div>
+                <p class="closeBtn">x</p>
+            </div>
+            <div class="steam_container">
+                <form action="https://store.steampowered.com/">
+                    <label for="user">sign in with account name</label>
+                    <input type="text" id="user" autocomplete="off" />
+                    <label for="password">password</label>
+                    <input type="password" id="password" autocomplete="off" />
+                    <input type="checkbox" id="remember" />
+                    <label for="remember">Remember me</label>
+                    <div>
+                        <input type="submit" value="Sign in" />
+                    </div>
+                    <a href="#">Help, I can't sign in</a>
+                </form>
+                <div class="steam_qrCode">
+                    <p>or sign width qr</p>
+                    <img src="imgs/Steam_qrcode.png" />
+                </div>
+            </div>
+        </div>
+
+        <div class="app" id="app__discord">
+            <div class="discord_container">
+                <div class="menu">
+                    <nav class="menu_home">
+                        <ul>
+                            <li><img src="imgs/discord-logo.png" /></li>
+                            <li><img src="imgs/me_discord.jpg" /></li>
+                            <li><img src="imgs/man_discord.png" /></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
