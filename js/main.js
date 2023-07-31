@@ -1,13 +1,14 @@
 initialize = () => {
     const $startup = document.querySelector(".initialize");
-    let audioStartup = new Audio("audio/Windows10Startupsound.mp3");
+    let $audioStartup = document.querySelector(".initialize_audio");
 
     setTimeout(() => {
+        $audioStartup.autoplay = 1;
+        $audioStartup.load();
         $startup.style.opacity = "0";
         setTimeout(() => {
             $startup.style.display = "none";
         }, 1000);
-        audioStartup.play();
     }, 3050);
 };
 initialize();
