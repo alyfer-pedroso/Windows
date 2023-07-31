@@ -1,4 +1,18 @@
-function handleApplication(appID) {
+initialize = () => {
+    const $startup = document.querySelector(".initialize");
+    let audioStartup = new Audio("audio/Windows10Startupsound.mp3");
+
+    setTimeout(() => {
+        $startup.style.opacity = "0";
+        setTimeout(() => {
+            $startup.style.display = "none";
+        }, 1000);
+        audioStartup.play();
+    }, 3050);
+};
+initialize();
+
+handleApplication = (appID) => {
     const app = document.querySelector(appID);
     const closeBtn = document.querySelector(".closeBtn");
 
@@ -84,4 +98,4 @@ function handleApplication(appID) {
         segurandoClickMouse = false;
         translateYX.previousX = 0;
     });
-}
+};
