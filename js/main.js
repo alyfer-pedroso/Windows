@@ -1,6 +1,6 @@
 initialize = () => {
     const $startup = document.querySelector(".initialize");
-    let $audioStartup = document.querySelector(".initialize_audio");
+    const $audioStartup = document.querySelector(".initialize_audio");
 
     setTimeout(() => {
         $audioStartup.autoplay = 1;
@@ -15,17 +15,21 @@ initialize();
 
 handleApplication = (appID) => {
     const app = document.querySelector(appID);
-    const closeBtn = document.querySelector(".closeBtn");
+    const closeBtn = document.querySelectorAll(".closeBtn");
 
     app.style.setProperty("display", "block");
 
     var close = () => {
-        closeBtn.parentElement.parentElement.style.setProperty("display", "none");
+        app.style.setProperty("display", "none");
         setTimeout(() => {
-            closeBtn.removeEventListener("click", close);
+            closeBtn.forEach((me, i) => {
+                closeBtn[i].removeEventListener("click", close);
+            });
         }, 50);
     };
-    closeBtn.addEventListener("click", close);
+    closeBtn.forEach((me, i) => {
+        closeBtn[i].addEventListener("click", close);
+    });
 
     var addX = 450;
     var addY = 100;
