@@ -12,7 +12,7 @@ initialize = () => {
         }, 1000);
     }, 3050);
 };
-// initialize();
+initialize();
 
 handleApplication = (appID) => {
     const app = document.querySelector(appID);
