@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <div class="desktop">
+        <div class="desktop closeHome">
             <div class="desktop__icon">
                 <img src="imgs/chrome-logo.png" />
                 <p>Google Chrome</p>
@@ -26,24 +26,21 @@
             </div>
         </div>
 
-        <div class="initialize">
+        <div class="initialize" style="display: none">
             <div class="initialize_container">
                 <div class="initialize_img">
                     <img src="imgs/Windows_logo_-_2012_(dark_blue).svg" alt="windowsLogo" />
                 </div>
-                <div class="initialize_loading_container">
-                    <div class="initialize_loading"></div>
-                    <div class="initialize_loading"></div>
-                    <div class="initialize_loading"></div>
-                </div>
+                <div class="initialize_loading_container"></div>
             </div>
         </div>
 
         <div class="taskbar">
-            <img src="imgs/windowsStartBtn.png" class="taskbar__icon" />
+            <img src="imgs/windowsStartBtn.png" class="taskbar__icon" id="homeBtn" />
+            <div class="taskbar__homeMenu"></div>
         </div>
 
-        <div class="app" id="app__steam">
+        <div class="app closeHome" id="app__steam">
             <div class="steam_header">
                 <div>
                     <img src="imgs/Steam_icon_app.png" />
@@ -71,7 +68,7 @@
             </div>
         </div>
 
-        <div class="app" id="app__discord">
+        <div class="app closeHome" id="app__discord">
             <div class="discord_container">
                 <div class="menu">
                     <nav class="menu_home">

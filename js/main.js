@@ -4,6 +4,7 @@ initialize = () => {
 
     setTimeout(() => {
         $audioStartup.autoplay = 1;
+        $audioStartup.play();
         $audioStartup.load();
         $startup.style.opacity = "0";
         setTimeout(() => {
@@ -11,7 +12,7 @@ initialize = () => {
         }, 1000);
     }, 3050);
 };
-initialize();
+// initialize();
 
 handleApplication = (appID) => {
     const app = document.querySelector(appID);
@@ -69,9 +70,9 @@ handleApplication = (appID) => {
             move: "mousemove",
         },
         touch: {
-            down: "pointerdown",
-            up: "pointerup",
-            move: "pointermove",
+            down: "touchstart",
+            up: "touchend",
+            move: "touchmove",
         },
     };
 
@@ -104,3 +105,28 @@ handleApplication = (appID) => {
         translateYX.previousX = 0;
     });
 };
+
+taskbarMenu = () => {
+    const taskbar = document.querySelector(".taskbar");
+    const homeBtn = document.querySelector("#homeBtn");
+    const closeHome = document.querySelectorAll(".closeHome");
+    const taskbar_homeMenu = document.querySelector(".taskbar__homeMenu");
+
+    var open = () => {
+        taskbar_homeMenu.style.height = "39rem";
+        homeBtn.removeEventListener("click", open);
+        closeHome.forEach((me, i) => {
+            closeHome[i].addEventListener("click", close);
+        });
+    };
+    var close = () => {
+        taskbar_homeMenu.style.height = "0";
+        closeHome.forEach((me, i) => {
+            closeHome[i].removeEventListener("click", close);
+        });
+        homeBtn.addEventListener("click", open);
+    };
+
+    homeBtn.addEventListener("click", open);
+};
+taskbarMenu();
