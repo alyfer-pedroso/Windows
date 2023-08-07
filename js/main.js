@@ -107,7 +107,6 @@ handleApplication = (appID) => {
 };
 
 taskbarMenu = () => {
-    const taskbar = document.querySelector(".taskbar");
     const homeBtn = document.querySelector("#homeBtn");
     const closeHome = document.querySelectorAll(".closeHome");
     const taskbar_homeMenu = document.querySelector(".taskbar__homeMenu");

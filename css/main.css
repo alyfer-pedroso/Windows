@@ -1,7 +1,10 @@
+:root {
+    --taskbar-color: #0000804d;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
-    /* position: relative; */
 }
 
 .desktop {
@@ -265,7 +268,7 @@ body {
 }
 
 .taskbar {
-    background-color: #0000804d;
+    background-color: var(--taskbar-color);
     margin: 1rem 0 0 0;
     padding: 0.2rem 0.2rem 0.2rem 1rem;
     width: 100vw;
@@ -284,8 +287,7 @@ body {
     left: 0;
     width: 38rem;
     height: 0;
-    background-color: #0000804d;
-    background-image: linear-gradient(-135deg, #0000804d, #00000068);
+    background-image: linear-gradient(-135deg, var(--taskbar-color), #00000068);
     transition: height 0.5s ease;
 }
 .taskbar__icon {
